@@ -1,0 +1,66 @@
+<html>
+<head>
+<script>
+var r;
+var g;
+var b;
+function drawCircle1(n)
+{
+n = Number(n);
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+for (var i=0; i<n; i++)
+{
+ctx.beginPath();
+ctx.arc(300,300,250 - i*10,0,Math.PI*2,true);
+r = Math.floor(Math.random()*255);
+g = Math.floor(Math.random()*255);
+b = Math.floor(Math.random()*255);
+ctx.strokeStyle = 'rgb('+r+','+g+','+b+')';
+r = Math.floor(Math.random()*255);
+g = Math.floor(Math.random()*255);
+b = Math.floor(Math.random()*255);
+ctx.fillStyle = 'rgb('+r+','+g+','+b+')';
+ctx.lineWidth = 2;
+ctx.stroke();
+ctx.fill();
+}
+}
+function drawCircle2(n)
+{
+n = Number(n);
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+for (var i=0; i<n; i++)
+{
+ctx.beginPath();
+ctx.arc(300 + i*25,300,250 - i*25,0,Math.PI*2,true);
+r = Math.floor(Math.random()*255);
+g = Math.floor(Math.random()*255);
+b = Math.floor(Math.random()*255);
+ctx.strokeStyle = 'rgb('+r+','+g+','+b+')';
+r = Math.floor(Math.random()*255);
+g = Math.floor(Math.random()*255);
+b = Math.floor(Math.random()*255);
+ctx.fillStyle = 'rgb('+r+','+g+','+b+')';
+ctx.lineWidth = 3;
+ctx.stroke();
+ctx.fill();
+}
+}
+function drawBox()
+{
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+ctx.fillStyle = 'black';
+}
+</script>
+</head>
+<body onload="drawBox()">
+<canvas id="canvas" width="600" height="600">
+</canvas>
+<br>
+<input type="button" value="Круг 1" onclick="drawCircle1(25)"/>
+<input type="button" value="Круг 2" onclick="drawCircle2(10)"/>
+</body>
+</html>
